@@ -1,0 +1,265 @@
+:root {
+  --main-bg-color: rgba(108, 66, 134, 0.527);
+  --main-text-color: white;
+  --box-shadow: 10px 5px 5px rgba(40, 39, 41, 0.514);
+}
+/*----LANDING PAGE----*/
+body {
+  height: auto;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+a {
+  color: var(--main-text-color);
+  text-decoration: none;
+}
+header {
+  margin: 0;
+}
+#ul-landing-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0rem;
+  list-style: none;
+  background-color: black;
+}
+#ul-landing-page li {
+  padding: 0rem 2rem;
+}
+
+#landing-page {
+  color: var(--main-text-color);
+  background-image: url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+  background-size: 180vh 100vh;
+  transition: opacity 1s ease-in-out;
+}
+#main-section-landingPage {
+  background-image: url("https://images.unsplash.com/photo-1580999210478-dcaf792ce71d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2902&q=80");
+  background-size: 210vh 100vh;
+  transform: rotateY(180deg);
+  transition: opacity 5s linear;
+  animation: fade 8s infinite linear;
+  animation-direction: alternate;
+}
+
+/* ----Search Page-----*/
+#body-search {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url("https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1756&q=80");
+  background-size: cover;
+}
+#search-header {
+  margin: 1rem;
+  padding: 2rem 5rem;
+  background-color: rgba(255, 255, 255, 0.322);
+  border-radius: 5px;
+}
+img {
+  height: 25vh;
+  width: 15vw;
+  animation: none;
+  cursor: pointer;
+}
+input {
+  height: 5vh;
+  padding: 2rem;
+  background-color: rgba(175, 124, 223, 0.514);
+  box-shadow: var(--box-shadow);
+  border: none;
+  cursor: pointer;
+}
+button {
+  height: 5vh;
+  width: 5vh;
+  background-color: rgb(210, 190, 229);
+  cursor: pointer;
+}
+#galaxy-search-input[type="text"] {
+  font-size: 24px;
+  border-radius: 32px;
+  color: var(--main-text-color);
+}
+#galaxy-search-input[type="text"]:focus {
+  background-color: var(--main-bg-color);
+  outline: none;
+  transform: translateY(2px);
+}
+#galaxy-search-input[type="text"]::placeholder {
+  color: var(--main-text-color);
+}
+#galaxy-search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3rem;
+}
+#planetArticle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: auto;
+  padding: 1rem;
+}
+#planetArticle img:hover {
+  transform: scale(1.2);
+  transition-duration: 0.8s;
+  transition-timing-function: ease-out;
+}
+#star,
+#starTwo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10vh;
+  width: 10vw;
+  filter: invert(60%) sepia(67%) saturate(100%) hue-rotate(366deg)
+    brightness(118%) contrast(119%);
+  animation: blink 30s infinite ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+#starTwo {
+  animation: blink 40s infinite ease-in-out;
+  animation-delay: 5s;
+}
+
+/* ----Info Page-----*/
+.hide {
+  display: none;
+}
+#body-planetInfo {
+  background-size: cover;
+  padding: 5rem;
+  background-image: url("https://images.unsplash.com/photo-1502679726485-931beda67f88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1752&q=80");
+}
+
+#planetInfo {
+  height: auto;
+  width: auto;
+  padding: 2rem;
+  font-weight: normal;
+  display: grid;
+  border: 5px solid var(--main-bg-color);
+  grid-template-columns: 15vw 15vw 15vw 15vw 15vw 15vw;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "h1 h1 . . . ."
+    "p p img planet-latin ul ul"
+    "p p . . ul ul"
+    "btnBack moon moon moon moon btnNext";
+}
+#planetInfo h1 {
+  grid-area: h1;
+  font-size: 36px;
+  justify-self: center;
+}
+
+#planetInfo p {
+  grid-area: p;
+  justify-self: flex-end;
+  padding: 1.5rem;
+}
+
+#planetInfo img {
+  grid-area: img;
+  height: 30vh;
+  width: auto;
+}
+#planetInfo #planet-latin {
+  grid-area: planet-latin;
+  justify-self: center;
+  background-color: var(--main-bg-color);
+  height: 2rem;
+}
+#planetInfo ul {
+  grid-area: ul;
+  list-style: none;
+  line-height: 10px;
+  justify-self: left;
+}
+#planetInfo #planet-moon {
+  grid-area: moon;
+  list-style: none;
+  justify-self: flex-end;
+}
+#planetInfo button {
+  grid-area: btnNext;
+  margin: 1rem;
+  width: 6rem;
+  border: none;
+  box-shadow: var(--box-shadow);
+  justify-self: flex-start;
+  align-self: center;
+}
+#planetInfo button:active {
+  background-color: whitesmoke;
+  border: 2px solid rgb(100, 97, 97);
+  transform: translateY(4px);
+}
+
+#planetInfo #btnBack {
+  grid-area: btnBack;
+}
+
+#planetInfo img:hover {
+  animation: spin 8s infinite linear;
+}
+/* ---Key frames ---*/
+@keyframes fade {
+  /* landing-page*/
+  0% {
+    opacity: 0;
+    height: 100%;
+  }
+  100% {
+    opacity: 1;
+    height: 140%;
+  }
+}
+@keyframes blink {
+  /* search-page*/
+  25% {
+    opacity: 0.4;
+    height: 5vh;
+    width: 5vw;
+  }
+  50% {
+    opacity: 0.6;
+    top: 50vh;
+    height: 10vh;
+    width: 10vw;
+  }
+  75% {
+    opacity: 0.4;
+    top: 10vh;
+    height: 5vh;
+    width: 5vw;
+  }
+  100% {
+    opacity: 0.6;
+    left: 100vw;
+    top: 50vh;
+    height: 10vh;
+    width: 10vw;
+  }
+}
+@keyframes spin {
+  /* info-page*/
+  from {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  to {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
